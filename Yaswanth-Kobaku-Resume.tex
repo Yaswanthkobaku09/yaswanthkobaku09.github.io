@@ -1,0 +1,105 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[left=1.4cm,right=1.4cm,top=1.0cm,bottom=0.9cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+
+\definecolor{accent}{HTML}{1a4b8c}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=1pt,topsep=2pt,parsep=0pt}
+
+% ATS-friendly section headings: plain text + rule
+\titleformat{\section}{\large\bfseries\scshape\color{accent}}{}{0em}{}[\vspace{-6pt}\rule{\textwidth}{0.6pt}]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill{#2}\\
+  \textit{#3}\hfill\textit{#4}\vspace{2pt}
+}
+
+\begin{document}
+
+%==================== HEADER ====================
+\begin{center}
+  {\Huge\bfseries Yaswanth Kobaku}\\[3pt]
+  {\large Penetration Tester (VAPT) $\vert$ AI-Driven Security}\\[5pt]
+  \small
+  +91 94409 08784 \quad$\vert$\quad
+  \href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} \quad$\vert$\quad
+  \href{https://www.linkedin.com/in/yaswanth-kobaku}{linkedin.com/in/yaswanth-kobaku}\\[2pt]
+  \href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09} \quad$\vert$\quad
+  \href{https://yaswanthkobaku09.github.io/cyber/}{Portfolio: yaswanthkobaku09.github.io/cyber}
+\end{center}
+
+%==================== SUMMARY ====================
+\section{Summary}
+M.Tech (Information Security \& Cyber Forensics) candidate and penetration tester with hands-on VAPT
+experience across web applications, networks, and endpoints following OWASP Top 10 and WSTG. Ranked
+\textbf{Top 3\% globally on TryHackMe}. Skilled at pairing manual testing with \textbf{AI-driven
+automation} (Claude and agentic frameworks) to accelerate assessments while verifying every finding.
+Seeking a full-time penetration testing / security engineering role.
+
+%==================== SKILLS ====================
+\section{Skills}
+\textbf{Penetration Testing:} VAPT, OWASP Top 10, WSTG, Reconnaissance, Vulnerability Assessment, Exploitation, Reporting\\
+\textbf{Tools:} Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Nikto, OWASP ZAP, Gobuster, Hydra, The Harvester\\
+\textbf{Security Domains:} Web App Security, Network Security, Digital Forensics, Malware Analysis, OSINT, IDS/IPS\\
+\textbf{Forensics:} Volatility, FTK Imager, OS Forensics, PE Studio, PE Xplorer\\
+\textbf{AI \& Automation:} AI-driven VAPT agents, LLM-guided fuzzing, Adversarial ML, Prompt-injection defense\\
+\textbf{Languages \& Platforms:} Python, C++, SQL, Kali Linux, Git, TryHackMe, PortSwigger
+
+%==================== EXPERIENCE ====================
+\section{Experience}
+\entry{VAPT Intern — SecNinjaz Technologies (AI-Native Cybersecurity)}{Apr 2026 -- Present}{New Delhi, India (Onsite)}{}
+\begin{itemize}
+  \item Perform authorized web-application and infrastructure penetration tests end to end — reconnaissance, exploitation, and reporting.
+  \item Built and operate a custom \textbf{AI VAPT agent} (Claude + agentic frameworks); solved \textbf{30+ vulnerable lab machines} and ran full web \& infra test passes, with human verification of every finding.
+  \item Deliver evidence-backed reports with proof-of-concept, CVSS severity ratings, and actionable remediation guidance.
+\end{itemize}
+\vspace{4pt}
+\entry{Ethical Hacking / VAPT Intern — Prog Master Pvt Ltd}{Sep 2024 -- Feb 2025}{VAPT, OWASP, Security Tooling}{}
+\begin{itemize}
+  \item Applied OWASP Top 10 techniques to detect SQL Injection, XSS, and misconfigurations across web apps and networks.
+  \item Conducted VAPT on web applications, Android applications, and endpoints using Kali Linux.
+  \item Authored technical reports with reproducible proof-of-concept evidence and remediation strategies.
+\end{itemize}
+
+%==================== PROJECTS ====================
+\section{Projects}
+\textbf{Autonomous VAPT Multi-Agent Orchestrator} \hfill \textit{Python, Multi-Agent AI}\\
+Planner, recon, exploitation, and privilege-escalation agents that automate VAPT tasks against authorized labs.\vspace{3pt}\\
+\textbf{LLM-Guided Fuzzing for Vulnerability Discovery} \hfill \textit{Python, AFL++, LLM}\\
+Augments a coverage-guided fuzzer with LLM seed generation and crash triage for faster bug discovery.\vspace{3pt}\\
+\textbf{Web Application Penetration Test — WSTG / OWASP} \hfill \textit{Burp Suite, OWASP}\\
+Complete WSTG v4.2 / OWASP Top 10 assessment: scoping, evidence-backed findings, CVSS ratings, and remediation.
+
+%==================== ACHIEVEMENTS & RESEARCH ====================
+\section{Achievements \& Research}
+\begin{itemize}
+  \item \textbf{Top 3\% globally on TryHackMe}; active hands-on practitioner on TryHackMe and PortSwigger.
+  \item Solved \textbf{30+ vulnerable lab machines} autonomously using a self-built AI VAPT agent.
+  \item Authored \textbf{3+ research papers} on AI in Cybersecurity (autonomous security testing, adversarial ML, trustworthy AI).
+\end{itemize}
+
+%==================== CERTIFICATIONS ====================
+\section{Certifications}
+\textbf{Certified Ethical Hacker (CEH)} — EC-Council (Nov 2025) \quad$\vert$\quad
+\textbf{Cyber Security Analyst} — Cisco (Mar 2026) \quad$\vert$\quad
+\textbf{Ethical Hacking} — Cisco (Mar 2026)
+
+%==================== EDUCATION ====================
+\section{Education}
+\entry{M.Tech, Information Security \& Cyber Forensics — Lovely Professional University}{Aug 2025 -- Present}{Phagwara, Punjab}{}
+\par\vspace{5pt}
+\entry{B.Tech, Cybersecurity (IoT \& Blockchain) — Siddharth Institute of Engineering \& Technology}{2021 -- 2025}{Puttur, Andhra Pradesh}{}
+\par
+
+\end{document}
