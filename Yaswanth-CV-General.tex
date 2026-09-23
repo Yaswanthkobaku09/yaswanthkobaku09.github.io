@@ -1,0 +1,101 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[left=1.5cm,right=1.5cm,top=0.9cm,bottom=0.7cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{0A66C2}   % linkedin-style blue for the icon box
+\definecolor{ink}{HTML}{1a1a1a}
+\hypersetup{colorlinks=true,urlcolor=ink,linkcolor=ink}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\color{ink}
+
+% small dash bullet (matches the template's tack marker)
+\newcommand{\dashbullet}{\raisebox{0.35ex}{\rule{1.05ex}{0.45pt}}}
+\setlist[itemize]{leftmargin=1.6em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\dashbullet}
+
+% Section heading: bold title with a full-width rule below
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{-7pt}{\color{black}\rule{\textwidth}{0.6pt}}]
+\titlespacing{\section}{0pt}{5pt}{3pt}
+
+% LinkedIn glyph: white "in" on a blue rounded box
+\newcommand{\linkedinicon}{\raisebox{-0.15ex}{\colorbox{accent}{\textcolor{white}{\scriptsize\textbf{in}}}}}
+
+% Experience/Project entry: title | subtitle .... date(bold right); optional location line
+\newcommand{\entry}[3]{\textbf{#1}\hfill\textbf{#3}\\[1pt]{\itshape #2}\par\vspace{2pt}}
+\newcommand{\entryloc}[4]{\textbf{#1}\hfill\textbf{#3}\\[1pt]{\itshape #2}\\{\itshape #4}\par\vspace{2pt}}
+
+\begin{document}
+
+%==================== HEADER ====================
+\begin{center}
+  {\LARGE\bfseries Yaswanth Kobaku}\\[2pt]
+  Andhra Pradesh, India\\[2pt]
+  {\small \Telefon\,+91\,9440908784 \quad \Letter\,\href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} \quad \linkedinicon\,\href{https://www.linkedin.com/in/yaswanth-kobaku}{www.linkedin.com/in/yaswanth-kobaku}}\\[2pt]
+  {\small \Mundus\,\href{https://yaswanthkobaku09.github.io/}{yaswanthkobaku09.github.io} \quad \ComputerMouse\,\href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09}}
+\end{center}
+
+%==================== INTERNSHIP ====================
+\section*{Internship}
+\entryloc{Technology Intern (Cybersecurity \& AI)}{Software, AI/ML \& Security}{Apr 2026 -- Sep 2026}{New Delhi, India}
+\begin{itemize}
+  \item Designed and built a \textbf{Python multi-agent automation system} integrating \textbf{LLMs (Claude)} to automate complex technical workflows end to end.
+  \item Developed \textbf{automated testing pipelines} and verified outputs for accuracy and reliability before delivery.
+  \item Performed security assessments in a \textbf{NABL-accredited STQC lab} environment, following standardized, compliance-driven procedures.
+\end{itemize}
+\vspace{3pt}
+\entryloc{Ethical Hacking / Security Intern}{Security, Testing \& Automation}{Sept 2024 -- Feb 2025}{Hyderabad, Telangana}
+\begin{itemize}
+  \item Automated repetitive testing tasks with \textbf{Python scripts}, improving speed and consistency.
+  \item Applied structured \textbf{problem-solving} across web and mobile applications, documenting findings and remediation with clear, reproducible steps.
+\end{itemize}
+
+%==================== PROJECTS ====================
+\section*{Projects}
+\entry{Autonomous Multi-Agent Automation System}{Python, LLMs, Agents}{2026}
+\begin{itemize}
+  \item Built a planner + worker \textbf{multi-agent system} using Claude to automate complex technical tasks end to end.
+  \item Benchmarked agent performance across known and novel problem sets to measure real-world reliability.
+\end{itemize}
+\vspace{3pt}
+\entry{Enhancing Transparency in Organ Donation Through Blockchain}{Solidity, Hardhat, JavaScript}{Jan 2025 -- Apr 2025}
+\begin{itemize}
+  \item Designed a secure, transparent \textbf{organ-donation management system} on blockchain with \textbf{smart-contract} verification on Ethereum and cloud-deployed \textbf{REST APIs}.
+\end{itemize}
+\vspace{3pt}
+\entry{Full Web Application Penetration Testing}{Burp Suite, OWASP}{May 2025 -- Aug 2025}
+\begin{itemize}
+  \item Performed an \textbf{end-to-end OWASP Top 10} assessment with evidence-backed findings and a detailed report with proof-of-concept exploits.
+\end{itemize}
+
+%==================== CERTIFICATIONS ====================
+\section*{Certificates / Certifications}
+\textbf{Certified Ethical Hacker (v13)}\hfill\textbf{Nov 2025}\\{\itshape EC -- Council}\par\vspace{2pt}
+\textbf{Ethical Hacking}\hfill\textbf{Oct 2025}\\{\itshape CISCO}\par\vspace{2pt}
+\textbf{Cybersecurity Analyst}\hfill\textbf{Sept 2025}\\{\itshape CISCO}\par\vspace{2pt}
+\textbf{CompTIA Security+ SY0-401}\hfill\textbf{Feb 2023}\\{\itshape Infosys}\par\vspace{2pt}
+\textbf{Cyber Security \& Ethical Hacking}\hfill\textbf{Dec 2023}\\{\itshape Infosys}\par
+
+%==================== SKILLS ====================
+\section*{Skills}
+\textbf{Programming \& Tools:} Python, C++, SQL/MySQL, JavaScript, Solidity, Git, Docker, REST APIs, Linux.\par\vspace{2pt}
+\textbf{AI / ML \& Data:} Applied ML, LLMs \& AI Agents, Adversarial ML, Explainable AI, Data Analysis, Model Evaluation.\par\vspace{2pt}
+\textbf{Cybersecurity:} VAPT, OWASP Top 10, Vulnerability Assessment, Digital Forensics, Malware Analysis.\par\vspace{2pt}
+\textbf{Soft Skills:} Problem-Solving, Teamwork, Leadership, Communication, Adaptability, Continuous Learning.
+
+%==================== EDUCATION ====================
+\section*{Education}
+\textbf{Lovely Professional University}\hfill Aug 2025 -- Present\\
+{\itshape Master of Technology -- Information Security \& Cyber Forensics}\hfill{\itshape Phagwara, Punjab}\par\vspace{2pt}
+\textbf{Siddharth Institute of Engineering and Technology}\hfill Dec 2021 -- Apr 2025\\
+{\itshape Bachelor of Technology -- Cyber Security including IoT and Blockchain Technology}\hfill{\itshape Puttur, Andhra Pradesh}\par
+
+\end{document}
