@@ -1,105 +1,138 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[left=1.4cm,right=1.4cm,top=1.0cm,bottom=0.9cm]{geometry}
+\usepackage{charter}          % professional serif body
+\usepackage{tgheros}          % Helvetica-style sans for headings
+\usepackage[left=1.5cm,right=1.5cm,top=0.8cm,bottom=0.6cm]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
 \usepackage{xcolor}
-\usepackage{array}
+\usepackage[hidelinks]{hyperref}
 
-\definecolor{accent}{HTML}{1a4b8c}
+\definecolor{accent}{HTML}{14385F}   % deep professional navy/blue
+\definecolor{rulec}{HTML}{14385F}
 \hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=1.4em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.0}
+\setlist[itemize]{leftmargin=1.3em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\textcolor{accent}{\small\textbullet}}
 
-% ATS-friendly section headings: plain text + rule
-\titleformat{\section}{\large\bfseries\scshape\color{accent}}{}{0em}{}[\vspace{-6pt}\rule{\textwidth}{0.6pt}]
-\titlespacing{\section}{0pt}{4pt}{2pt}
+% Modern uppercase sans section headings with a full-width rule below
+\titleformat{\section}
+  {\sffamily\normalsize\bfseries\color{accent}}
+  {}{0em}{\MakeUppercase}[{\color{rulec}\titlerule[1pt]}]
+\titlespacing{\section}{0pt}{3pt}{2pt}
 
-\newcommand{\entry}[4]{%
-  \textbf{#1}\hfill{#2}\\
-  \textit{#3}\hfill\textit{#4}\vspace{2pt}
+% Skill row: fixed-width bold label on the baseline + value paragraph whose FIRST line
+% aligns with the label, and whose wrapped lines hang under the value column.
+\newlength{\skilllabel}
+\setlength{\skilllabel}{3.6cm}
+\newcommand{\skillrow}[2]{%
+  \noindent\makebox[\skilllabel][l]{\textbf{\color{accent}#1}}%
+  \parbox[t]{\dimexpr\textwidth-\skilllabel\relax}{#2}\par\vspace{4pt}%
+}
+% Experience/Education header: title left, date flush-right; second line = location/meta
+\newcommand{\headrow}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{8pt}}r@{}}
+    \textbf{#1} & #2\\[1pt]
+    \textit{\color{black!70}#3} & \textit{\color{black!70}#4}\\
+  \end{tabularx}%
+}
+% Project: title left + tech right, then two bullet points
+\newcommand{\project}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{8pt}}r@{}}
+    \textbf{#1} & \textit{\color{black!70}#2}\\
+  \end{tabularx}
+  \begin{itemize}
+    \item #3
+    \item #4
+  \end{itemize}\vspace{2pt}%
 }
 
 \begin{document}
 
 %==================== HEADER ====================
 \begin{center}
-  {\Huge\bfseries Yaswanth Kobaku}\\[3pt]
-  {\large Penetration Tester (VAPT) $\vert$ AI-Driven Security}\\[5pt]
-  \small
-  +91 94409 08784 \quad$\vert$\quad
-  \href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} \quad$\vert$\quad
-  \href{https://www.linkedin.com/in/yaswanth-kobaku}{linkedin.com/in/yaswanth-kobaku}\\[2pt]
-  \href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09} \quad$\vert$\quad
-  \href{https://yaswanthkobaku09.github.io/cyber/}{Portfolio: yaswanthkobaku09.github.io/cyber}
+  {\sffamily\bfseries\Huge\color{accent} Yaswanth Kobaku}\\[6pt]
+  {\small\color{black!80}
+  \textcolor{accent}{+91 94409 08784} \ \ \textbar\ \
+  \href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} \ \ \textbar\ \
+  \href{https://www.linkedin.com/in/yaswanth-kobaku}{linkedin.com/in/yaswanth-kobaku}\\[3pt]
+  \href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09} \ \ \textbar\ \
+  \href{https://yaswanthkobaku09.github.io/cyber/}{Portfolio: yaswanthkobaku09.github.io/cyber}}
 \end{center}
-
-%==================== SUMMARY ====================
-\section{Summary}
-M.Tech (Information Security \& Cyber Forensics) candidate and penetration tester with hands-on VAPT
-experience across web applications, networks, and endpoints following OWASP Top 10 and WSTG. Ranked
-\textbf{Top 3\% globally on TryHackMe}. Skilled at pairing manual testing with \textbf{AI-driven
-automation} (Claude and agentic frameworks) to accelerate assessments while verifying every finding.
-Seeking a full-time penetration testing / security engineering role.
 
 %==================== SKILLS ====================
 \section{Skills}
-\textbf{Penetration Testing:} VAPT, OWASP Top 10, WSTG, Reconnaissance, Vulnerability Assessment, Exploitation, Reporting\\
-\textbf{Tools:} Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Nikto, OWASP ZAP, Gobuster, Hydra, The Harvester\\
-\textbf{Security Domains:} Web App Security, Network Security, Digital Forensics, Malware Analysis, OSINT, IDS/IPS\\
-\textbf{Forensics:} Volatility, FTK Imager, OS Forensics, PE Studio, PE Xplorer\\
-\textbf{AI \& Automation:} AI-driven VAPT agents, LLM-guided fuzzing, Adversarial ML, Prompt-injection defense\\
-\textbf{Languages \& Platforms:} Python, C++, SQL, Kali Linux, Git, TryHackMe, PortSwigger
+\skillrow{Pen Testing:}{VAPT, OWASP Top 10, WSTG, Reconnaissance, Vulnerability Assessment, Exploitation, Reporting, Threat Modeling, Privilege Escalation, Red Teaming}
+\skillrow{Tools:}{Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Nikto, OWASP ZAP, Gobuster, Hydra, The Harvester, Nessus, ffuf, John the Ripper}
+\skillrow{Security Domains:}{Web App Security, Network Security, Digital Forensics, Malware Analysis, OSINT, IDS/IPS}
+\skillrow{Forensics:}{Volatility, FTK Imager, OS Forensics, PE Studio, PE Xplorer}
+\skillrow{AI \& Automation:}{AI-driven VAPT agents, LLM-guided fuzzing, Adversarial ML, Prompt-injection defense}
+\skillrow{Languages/Tools:}{Python, C++, SQL, Kali Linux, Git, TryHackMe, PortSwigger, Hack The Box}
 
 %==================== EXPERIENCE ====================
 \section{Experience}
-\entry{VAPT Intern — SecNinjaz Technologies (AI-Native Cybersecurity)}{Apr 2026 -- Present}{New Delhi, India (Onsite)}{}
+\headrow{Cybersecurity Intern \textnormal{— SecNinjaz Technologies (AI-Native Cybersecurity)}}{Apr 2026 -- Sep 2026}{New Delhi, India (Onsite)}{}
 \begin{itemize}
-  \item Perform authorized web-application and infrastructure penetration tests end to end — reconnaissance, exploitation, and reporting.
-  \item Built and operate a custom \textbf{AI VAPT agent} (Claude + agentic frameworks); solved \textbf{30+ vulnerable lab machines} and ran full web \& infra test passes, with human verification of every finding.
-  \item Deliver evidence-backed reports with proof-of-concept, CVSS severity ratings, and actionable remediation guidance.
+  \item Performed end-to-end \textbf{web and infrastructure penetration testing} — reconnaissance, exploitation, and reporting.
+  \item Performed \textbf{VAPT} under the \textbf{NABL-accredited STQC lab}, following standardized, compliance-driven procedures.
+  \item Built and operated a custom \textbf{AI VAPT agent} (Claude + agentic frameworks); solved \textbf{30+ vulnerable lab machines} and ran full web \& infra test passes, with human verification of every finding.
+  \item Identified, validated, and \textbf{risk-prioritized vulnerabilities}, retesting fixes to confirm remediation.
+  \item Delivered \textbf{evidence-backed reports} with PoCs, \textbf{CVSS} severity ratings, and remediation guidance.
 \end{itemize}
-\vspace{4pt}
-\entry{Ethical Hacking / VAPT Intern — Prog Master Pvt Ltd}{Sep 2024 -- Feb 2025}{VAPT, OWASP, Security Tooling}{}
+\vspace{2pt}
+\headrow{Ethical Hacking / VAPT Intern \textnormal{— Prog Master Pvt Ltd}}{Sep 2024 -- Feb 2025}{VAPT, OWASP, Security Tooling}{}
 \begin{itemize}
-  \item Applied OWASP Top 10 techniques to detect SQL Injection, XSS, and misconfigurations across web apps and networks.
-  \item Conducted VAPT on web applications, Android applications, and endpoints using Kali Linux.
-  \item Authored technical reports with reproducible proof-of-concept evidence and remediation strategies.
+  \item Applied \textbf{OWASP Top 10} to detect \textbf{SQL Injection}, \textbf{XSS}, and misconfigurations across web apps and networks.
+  \item Conducted \textbf{VAPT} on web, Android, and endpoint targets using \textbf{Kali Linux}.
+  \item Performed \textbf{reconnaissance, scanning, and exploitation}, strengthening skills in \textbf{vulnerability assessment} and threat analysis.
+  \item Authored technical reports with reproducible \textbf{proof-of-concept} evidence and remediation strategies.
 \end{itemize}
 
 %==================== PROJECTS ====================
 \section{Projects}
-\textbf{Autonomous VAPT Multi-Agent Orchestrator} \hfill \textit{Python, Multi-Agent AI}\\
-Planner, recon, exploitation, and privilege-escalation agents that automate VAPT tasks against authorized labs.\vspace{3pt}\\
-\textbf{LLM-Guided Fuzzing for Vulnerability Discovery} \hfill \textit{Python, AFL++, LLM}\\
-Augments a coverage-guided fuzzer with LLM seed generation and crash triage for faster bug discovery.\vspace{3pt}\\
-\textbf{Web Application Penetration Test — WSTG / OWASP} \hfill \textit{Burp Suite, OWASP}\\
-Complete WSTG v4.2 / OWASP Top 10 assessment: scoping, evidence-backed findings, CVSS ratings, and remediation.
+\project{Autonomous VAPT Multi-Agent Orchestrator}{Python, Multi-Agent AI}
+{Planner, recon, exploitation, and \textbf{privilege-escalation} agents that automate \textbf{VAPT} tasks against authorized labs.}
+{Benchmarks agent success on \textbf{known versus novel vulnerabilities} to measure real-world generalization.}
+\project{LLM-Guided Fuzzing for Vulnerability Discovery}{Python, AFL++, LLM}
+{Augments a \textbf{coverage-guided fuzzer} with \textbf{LLM seed generation and crash triage} for faster bug discovery.}
+{Compares LLM-guided against baseline fuzzing to quantify \textbf{genuine discovery} over memorized results.}
+\project{Web Application Penetration Test — WSTG / OWASP}{Burp Suite, OWASP}
+{Executed a full \textbf{WSTG v4.2} / \textbf{OWASP Top 10} assessment covering \textbf{authentication, session management, injection, and access control}, with clear scoping and evidence-backed findings.}
+{Documented reproducible \textbf{proof-of-concepts}, assigned \textbf{CVSS} ratings, and mapped each finding to its \textbf{CWE} and business impact.}
 
-%==================== ACHIEVEMENTS & RESEARCH ====================
+%==================== ACHIEVEMENTS ====================
 \section{Achievements \& Research}
 \begin{itemize}
   \item \textbf{Top 3\% globally on TryHackMe}; active hands-on practitioner on TryHackMe and PortSwigger.
   \item Solved \textbf{30+ vulnerable lab machines} autonomously using a self-built AI VAPT agent.
-  \item Authored \textbf{3+ research papers} on AI in Cybersecurity (autonomous security testing, adversarial ML, trustworthy AI).
+  \item Conducted \textbf{research on AI-driven security and AI security testing} — how autonomous agents strengthen and stress-test modern defenses.
+  \item Authored \textbf{3+ research papers} on AI in Cybersecurity, spanning autonomous security testing, adversarial machine learning, and trustworthy, explainable AI systems.
 \end{itemize}
 
 %==================== CERTIFICATIONS ====================
 \section{Certifications}
-\textbf{Certified Ethical Hacker (CEH)} — EC-Council (Nov 2025) \quad$\vert$\quad
-\textbf{Cyber Security Analyst} — Cisco (Mar 2026) \quad$\vert$\quad
-\textbf{Ethical Hacking} — Cisco (Mar 2026)
+\begin{tabularx}{\textwidth}{@{}X@{}}
+\textbf{Certified Ethical Hacker (CEH v13)} — EC-Council, Nov 2025 \hfill \textbf{Cyber Security Analyst} — Cisco, Mar 2026\\[2pt]
+\textbf{Ethical Hacking} — Cisco, Mar 2026\\
+\end{tabularx}
 
 %==================== EDUCATION ====================
 \section{Education}
-\entry{M.Tech, Information Security \& Cyber Forensics — Lovely Professional University}{Aug 2025 -- Present}{Phagwara, Punjab}{}
-\par\vspace{5pt}
-\entry{B.Tech, Cybersecurity (IoT \& Blockchain) — Siddharth Institute of Engineering \& Technology}{2021 -- 2025}{Puttur, Andhra Pradesh}{}
-\par
+\begin{tabularx}{\textwidth}{@{}X@{\hspace{8pt}}r@{}}
+\textbf{Lovely Professional University} & \textit{\color{black!70}Phagwara, Punjab}\\
+Master of Technology & \textit{\color{black!70}Aug' 25 -- Present}\\
+\end{tabularx}\par
+Information Security \& Cyber Forensics\par
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}X@{\hspace{8pt}}r@{}}
+\textbf{Siddharth Institute of Engineering and Technology} & \textit{\color{black!70}Puttur, Andhra Pradesh}\\
+Bachelor of Technology & \textit{\color{black!70}Dec' 21 -- Apr' 25}\\
+\end{tabularx}\par
+Cybersecurity including IoT \& Blockchain technology\par
 
 \end{document}
