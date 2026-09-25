@@ -20,11 +20,11 @@
 \linespread{1.0}
 \setlist[itemize]{leftmargin=1.3em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\textcolor{accent}{\small\textbullet}}
 
-% Modern uppercase sans section headings with a full-width rule below
+% Resume-09 style: small-caps serif section heading with a thin full-width rule below
 \titleformat{\section}
-  {\sffamily\normalsize\bfseries\color{accent}}
-  {}{0em}{\MakeUppercase}[{\color{rulec}\titlerule[1pt]}]
-\titlespacing{\section}{0pt}{3pt}{2pt}
+  {\rmfamily\large\scshape\color{accent}}
+  {}{0em}{}[{\color{rulec}\titlerule[0.6pt]}]
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
 % Skill row: fixed-width bold label on the baseline + value paragraph whose FIRST line
 % aligns with the label, and whose wrapped lines hang under the value column.
@@ -32,7 +32,7 @@
 \setlength{\skilllabel}{3.6cm}
 \newcommand{\skillrow}[2]{%
   \noindent\makebox[\skilllabel][l]{\textbf{\color{accent}#1}}%
-  \parbox[t]{\dimexpr\textwidth-\skilllabel\relax}{#2}\par\vspace{4pt}%
+  \parbox[t]{\dimexpr\textwidth-\skilllabel\relax}{#2}\par\vspace{2pt}%
 }
 % Experience/Education header: title left, date flush-right; second line = location/meta
 \newcommand{\headrow}[4]{%
@@ -54,16 +54,16 @@
 
 \begin{document}
 
-%==================== HEADER ====================
-\begin{center}
-  {\sffamily\bfseries\Huge\color{accent} Yaswanth Kobaku}\\[6pt]
-  {\small\color{black!80}
-  \textcolor{accent}{+91 94409 08784} \ \ \textbar\ \
-  \href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} \ \ \textbar\ \
-  \href{https://www.linkedin.com/in/yaswanth-kobaku}{linkedin.com/in/yaswanth-kobaku}\\[3pt]
-  \href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09} \ \ \textbar\ \
-  \href{https://yaswanthkobaku09.github.io/cyber/}{Portfolio: yaswanthkobaku09.github.io/cyber}}
-\end{center}
+%==================== HEADER (Resume-09 layout) ====================
+{\rmfamily\bfseries\Huge\color{accent} Yaswanth Kobaku}\\[4pt]
+{\small
+\begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+  Linkedin: \href{https://www.linkedin.com/in/yaswanth-kobaku}{http://www.linkedin.com/in/yaswanth-kobaku} & \\[2pt]
+  Email: \href{mailto:uniqueyashu14@gmail.com}{uniqueyashu14@gmail.com} &
+  Mobile: \href{tel:+919440908784}{+91 94409 08784}\\[2pt]
+  Github: \href{https://github.com/Yaswanthkobaku09}{github.com/Yaswanthkobaku09} &
+  Portfolio: \href{https://yaswanthkobaku09.github.io/cyber/}{yaswanthkobaku09.github.io/cyber}\\
+\end{tabularx}}
 
 %==================== SKILLS ====================
 \section{Skills}
